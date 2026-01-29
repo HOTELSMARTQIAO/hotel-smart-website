@@ -1,0 +1,23 @@
+[Unit]
+Description=Hotel Smart Website
+After=network.target
+
+[Service]
+Type=notify
+User=root
+WorkingDirectory=/opt/hotel-smart-website
+Environment="FLASK_ENV=production"
+ExecStart=/usr/local/bin/gunicorn -w 4 -b 127.0.0.1:5000 app:app
+Restart=always
+RestartSec=10
+
+# 日志配置
+StandardOutput=journal
+StandardError=journal
+
+# 安全设置
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
