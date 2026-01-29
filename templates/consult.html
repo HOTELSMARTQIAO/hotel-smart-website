@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能咨询 - 酒店智能化专家</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">🏨 酒店智能化专家</div>
+            <ul class="nav-menu">
+                <li><a href="/">首页</a></li>
+                <li><a href="/consult" class="active">智能咨询</a></li>
+                <li><a href="/generate-plan">方案生成</a></li>
+                <li><a href="/#about">关于我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 智能咨询页面 -->
+    <section class="consult-page">
+        <div class="container">
+            <h1>智能咨询</h1>
+            <p class="subtitle">基于hotel-smart-systems Skill，为您提供专业的酒店智能化咨询服务</p>
+
+            <div class="consult-container">
+                <!-- 左侧：对话区域 -->
+                <div class="chat-area">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message system">
+                            <div class="message-content">
+                                <p>您好！我是酒店智能化专家助手，基于hotel-smart-systems Skill为您服务。</p>
+                                <p>您可以咨询以下问题：</p>
+                                <ul>
+                                    <li>系统规划：如"设计一个五星级酒店智能化方案"</li>
+                                    <li>系统详解：如"客控系统如何配置"</li>
+                                    <li>施工指导：如"施工时如何与装修配合"</li>
+                                    <li>验收标准：如"智能化系统验收标准"</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-input">
+                        <div class="quick-questions">
+                            <span class="quick-tag" onclick="askQuestion('设计一个300间客房的五星级酒店智能化方案')">
+                                设计300间客房的五星级酒店方案
+                            </span>
+                            <span class="quick-tag" onclick="askQuestion('客控系统施工时需要注意什么？')">
+                                客控系统施工注意事项
+                            </span>
+                            <span class="quick-tag" onclick="askQuestion('智能化系统验收标准是什么？')">
+                                智能化验收标准
+                            </span>
+                        </div>
+                        <div class="input-wrapper">
+                            <textarea id="userInput" placeholder="请输入您的问题..."></textarea>
+                            <button class="btn-send" onclick="sendMessage()">发送</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右侧：知识库 -->
+                <div class="knowledge-sidebar">
+                    <h3>知识库</h3>
+                    <div class="knowledge-list">
+                        <div class="knowledge-item">
+                            <h4>系统模块总览</h4>
+                            <p>涵盖客控、门锁、安防、BA、网络等核心系统</p>
+                        </div>
+                        <div class="knowledge-item">
+                            <h4>客控系统详解</h4>
+                            <p>系统架构、功能详解、施工要点、品牌适配</p>
+                        </div>
+                        <div class="knowledge-item">
+                            <h4>施工细节规范</h4>
+                            <p>管线敷设、设备安装、质量控制</p>
+                        </div>
+                        <div class="knowledge-item">
+                            <h4>专业配合要点</h4>
+                            <p>与土建、机电、装修、IT等专业配合</p>
+                        </div>
+                        <div class="knowledge-item">
+                            <h4>测试验收清单</h4>
+                            <p>单系统测试、联动测试、性能测试</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 酒店智能化专家. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/consult.js"></script>
+</body>
+</html>

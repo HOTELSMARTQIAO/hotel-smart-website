@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>方案生成 - 酒店智能化专家</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">🏨 酒店智能化专家</div>
+            <ul class="nav-menu">
+                <li><a href="/">首页</a></li>
+                <li><a href="/consult">智能咨询</a></li>
+                <li><a href="/generate-plan" class="active">方案生成</a></li>
+                <li><a href="/#about">关于我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 方案生成页面 -->
+    <section class="plan-page">
+        <div class="container">
+            <h1>智能化方案生成</h1>
+            <p class="subtitle">填写酒店基本信息，AI智能体将为您生成专业的智能化系统设计方案</p>
+
+            <div class="plan-container">
+                <!-- 左侧：表单 -->
+                <div class="plan-form">
+                    <form id="planForm" onsubmit="generatePlan(event)">
+                        <div class="form-group">
+                            <label>酒店类型 *</label>
+                            <select name="hotel_type" required>
+                                <option value="">请选择</option>
+                                <option value="商务酒店">商务酒店</option>
+                                <option value="度假酒店">度假酒店</option>
+                                <option value="精品酒店">精品酒店</option>
+                                <option value="会议酒店">会议酒店</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>星级标准 *</label>
+                            <select name="hotel_star" required>
+                                <option value="">请选择</option>
+                                <option value="三星">三星</option>
+                                <option value="四星">四星</option>
+                                <option value="五星">五星</option>
+                                <option value="超五星">超五星</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>客房数量 *</label>
+                            <input type="number" name="room_count" placeholder="例如：200" required min="1">
+                        </div>
+
+                        <div class="form-group">
+                            <label>公共区域配置</label>
+                            <input type="text" name="public_areas" placeholder="例如：大堂、餐厅、会议室、健身房、泳池">
+                        </div>
+
+                        <div class="form-group">
+                            <label>品牌要求</label>
+                            <select name="brand">
+                                <option value="">无特定品牌要求</option>
+                                <option value="希尔顿">希尔顿 Hilton</option>
+                                <option value="万豪">万豪 Marriott</option>
+                                <option value="凯悦">凯悦 Hyatt</option>
+                                <option value="洲际">洲际 IHG</option>
+                                <option value="雅高">雅高 Accor</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>预算范围</label>
+                            <input type="text" name="budget" placeholder="例如：500-800万">
+                        </div>
+
+                        <div class="form-group">
+                            <label>其他需求</label>
+                            <textarea name="requirements" placeholder="请描述其他特殊需求..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">生成方案</button>
+                    </form>
+                </div>
+
+                <!-- 右侧：方案展示 -->
+                <div class="plan-result">
+                    <div id="planResult">
+                        <div class="placeholder">
+                            <p>📋</p>
+                            <p>填写左侧表单后，点击"生成方案"按钮</p>
+                            <p>AI智能体将基于hotel-smart-systems Skill为您生成专业的智能化设计方案</p>
+                        </div>
+                    </div>
+                    <div id="loadingPlan" class="loading hidden">
+                        <div class="spinner"></div>
+                        <p>正在生成方案，请稍候...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 酒店智能化专家. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/generate_plan.js"></script>
+</body>
+</html>

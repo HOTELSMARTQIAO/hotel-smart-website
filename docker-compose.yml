@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=production
+      - COZE_API_KEY=${COZE_API_KEY}
+      - COZE_BOT_ID=${COZE_BOT_ID}
+      - COZE_API_URL=${COZE_API_URL:-https://api.coze.cn/open_api/v2/chat}
+    volumes:
+      - .:/app
+    restart: unless-stopped
