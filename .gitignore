@@ -20,7 +20,7 @@ wheels/
 .installed.cfg
 *.egg
 
-# 虚拟环境
+# Virtual Environment
 venv/
 env/
 ENV/
@@ -31,7 +31,7 @@ venv.bak/
 instance/
 .webassets-cache
 
-# 环境变量
+# Environment variables
 .env
 
 # IDE
@@ -41,22 +41,17 @@ instance/
 *.swo
 *~
 
-# 操作系统
+# OS
 .DS_Store
 Thumbs.db
 
-# 日志
+# Logs
 *.log
 
-# 临时文件
+# Temporary files
 tmp/
 temp/
 *.tmp
 
-# Skill文件（如果包含敏感信息）
+# Skill files
 *.skill
-
-# 测试
-.pytest_cache/
-.coverage
-htmlcov/
